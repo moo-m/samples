@@ -20,15 +20,18 @@ jobs:
       - name: Install Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.32.0'
+          channel: 'master'
 
-      - name: Flutter doctor
+      - name: Flutter Doctor
         run: flutter doctor
 
-      - name: Find project files
+      - name: Show Flutter Version
+        run: flutter --version
+
+      - name: List Files
         run: ls -R
 
-      - name: Install dependencies
+      - name: Install Dependencies
         run: flutter pub get
 
       - name: Build APK
